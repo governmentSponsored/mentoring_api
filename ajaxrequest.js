@@ -1,12 +1,11 @@
 $(document).ready( function() {
+    var url = url = 'apiRequest.php';
     $('#mentoring').submit(function(e) {
     	e.preventDefault();
     	e.stopPropagation();
-    	console.log('submitted');
-    	var zipCode = $('input[name="zipCode"]').val(),
-		distance = $('input[name="distance"]:checked').val(),
-		url = 'apiRequest.php',
-		fullUrl = url + '?zipCode=' + zipCode + '&distance=' + distance,
+    	var zipCode = $('#mentoring input[name="zipCode"]').val(),
+		distance = $('#mentoring input[name="distance"]:checked').val(),
+		fullUrl = url + '?zipCode=' + zipCode + '&distance=' + distance + '&service=mentoring',
 		dataString = '';
 
 		console.log(fullUrl);
@@ -21,4 +20,8 @@ $(document).ready( function() {
         	$('#results').html(dataString);
         })
     });
+    $('#mentoring').submit(function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    )};
 });
