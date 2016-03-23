@@ -11,7 +11,7 @@ $(document).ready( function() {
     	var zipCode = $('#mentoring input[name="zipCode"]').val(),
 		distance = $('#mentoring input[name="distance"]:checked').val(),
 		fullUrl = url + '?zipCode=' + zipCode + '&distance=' + distance + '&service=mentoring',
-		dataString = '';
+		dataString = '<ul class="list-group">';
 
 		$.ajax({ 
             'url': fullUrl,
@@ -20,8 +20,9 @@ $(document).ready( function() {
         	var records = data.records;
             console.log(data);
         	for(var record in records) {
-        		dataString += '<div>' + records[record].programName + '</div>'
+        		dataString += '<li class="list-group-item">' + records[record].programName + '</li>'
         	}
+            dataString+= '</ul>'
         	$('#mentoringResults').html(dataString);
         })
     });
@@ -35,7 +36,7 @@ $(document).ready( function() {
         var vol_loc = $('#allForGood input[name="zipCode"]').val(),
         vol_dist = $('#allForGood input[name="distance"]:checked').val(),
         fullUrl = url + '?vol_loc=' + vol_loc + '&vol_dist=' + vol_dist,
-        dataString = '';
+        dataString = '<ul class="list-group">';
 
         $.ajax({ 
             'url': fullUrl
@@ -43,8 +44,9 @@ $(document).ready( function() {
             var items = data.items;
             console.log(data);
             for(var item in items) {
-                dataString += '<div>' + items[item].title + '</div>'
+                dataString += '<li class="list-group-item">' + items[item].title + '</li>'
             }
+            dataString+= '</ul>'
             $('#allForGoodResults').html(dataString);
         })
     });
