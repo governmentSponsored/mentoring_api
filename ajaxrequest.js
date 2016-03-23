@@ -18,7 +18,7 @@ $(document).ready( function() {
         	for(var record in records) {
         		dataString += '<div>' + records[record].programName + '</div>'
         	}
-        	$('#results').html(dataString);
+        	$('#mentoringResults').html(dataString);
         })
     });
     $('#allForGood').submit(function(e) {
