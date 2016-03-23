@@ -10,7 +10,7 @@
 	} else {
 		$vol_loc = $_GET['vol_loc'];
 		$vol_dist = $_GET['vol_dist'];
-		$fullUrl = $allForGoodUrl . '&vol_loc=' . $vol_loc . '&vol_dist=' . $vol_dist;
+		$fullUrl = $allForGoodUrl . '&vol_loc=' . $vol_loc . '&vol_dist=' . $vol_dist . '&num=25';
 	}
 	
 	$JSON = file_get_contents($fullUrl);
