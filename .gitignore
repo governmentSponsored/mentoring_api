@@ -1,2 +1,2 @@
-#ignore the mentoring.org api url info
-mentoringUrl.php
+#ignore the mentoring.org api url and the api key for allforgood
+keys.php

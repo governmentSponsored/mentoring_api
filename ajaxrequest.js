@@ -5,7 +5,7 @@ $(document).ready( function() {
     	console.log('submitted');
     	var zipCode = $('input[name="zipCode"]').val(),
 		distance = $('input[name="distance"]:checked').val(),
-		url = 'test.php',
+		url = 'apiRequest.php',
 		fullUrl = url + '?zipCode=' + zipCode + '&distance=' + distance,
 		dataString = '';
 
