@@ -14,14 +14,15 @@ $(document).ready( function() {
             'dataType': "json"
         }).done(function(data) {
         	var records = data.records;
+            console.log(data);
         	for(var record in records) {
         		dataString += '<div>' + records[record].programName + '</div>'
         	}
         	$('#results').html(dataString);
         })
     });
-    $('#mentoring').submit(function(e) {
+    $('#allForGood').submit(function(e) {
         e.preventDefault();
         e.stopPropagation();
-    )};
+    });
 });
