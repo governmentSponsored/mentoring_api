@@ -17,10 +17,12 @@ $(document).ready( function() {
             'url': fullUrl,
             'dataType': "json"
         }).done(function(data) {
-        	var records = data.records;
+        	var records = data.records,
+            current;
             console.log(data);
         	for(var record in records) {
-        		dataString += '<li class="list-group-item">' + records[record].programName + '</li>'
+                current = records[record];
+        		dataString += '<li class="list-group-item"><a href="' + current.link + '">' + current.programName + '</a></li>'
         	}
             dataString+= '</ul>'
         	$('#mentoringResults').html(dataString);
@@ -41,10 +43,12 @@ $(document).ready( function() {
         $.ajax({ 
             'url': fullUrl
         }).done(function(data) {
-            var items = data.items;
+            var items = data.items,
+            current;
             console.log(data);
             for(var item in items) {
-                dataString += '<li class="list-group-item">' + items[item].title + '</li>'
+                current = items[item];
+                dataString += '<li class="list-group-item"><a href="' + current.detailUrl + '">' + current.title + '</a></li>'
             }
             dataString+= '</ul>'
             $('#allForGoodResults').html(dataString);
